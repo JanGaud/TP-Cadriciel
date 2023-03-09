@@ -1,11 +1,19 @@
 .primary-color{
-    background-color: rgb(223, 68, 25);
+    background-color: #ffffff;
+}
+
+.secondary-color{
+    background-color: #0088cc;
+}
+
+.third-color{
+    background-color: #003e7e;
 }
 
 /* Elements de cartes Post-it*/
 
 .card-big-shadow {
-    max-width: 320px;
+    max-width: 310px;
     position: relative;
 }
 
@@ -17,8 +25,13 @@
     border-radius: 0px;
 }
 .card {
+    min-width: 310px;
+    max-width: 310px;
+    min-height: 330px;
+    max-height: 330px;
+    overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.105);
     background-color: #FFFFFF;
     color: #252422;
     margin-bottom: 20px;
@@ -80,12 +93,15 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
-/*======== COLORS ===========*/
+/*======== Post-it COLORS ===========*/
 .card[data-color="blue"] {
-    background: #b8d8d8;
+    background: #4897be;
 }
 .card[data-color="blue"] .description {
-    color: #506568;
+    color: #31497b;
+}
+.card[data-color="blue"] .category {
+    color: #354c68;
 }
 
 .card[data-color="green"] {
@@ -136,4 +152,46 @@ a:hover, a:focus {
 }
 .card[data-color="orange"] .category {
     color: #e95e37;
+}
+
+/*==============Footer modif=================*/
+
+footer{
+    color: whitesmoke;
+}
+
+.table {
+    color: #ffffff;
+}
+  
+
+/*================Parralax====================*/
+
+h2 {
+  font-size: 125px;
+}
+
+.section-background {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax {
+  background-image: url("/img/parralax.jpg"); 
+}
+
+.parallax1 {
+  background-image: url("/img/pexels-kampus-production-5940841.jpg");
+}
+
+.text-bloc p {
+  margin: 75px;
+  font-size: 22px;
 }
