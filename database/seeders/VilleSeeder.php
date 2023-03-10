@@ -1,17 +1,16 @@
 <?php
 
 namespace Database\Seeders;
-
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
+use App\Models\Ville;
 use Illuminate\Database\Seeder;
 
 class VilleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        Ville::factory()
+            ->count(15)
+            ->create();
     }
 }
