@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Small Business - Start Bootstrap Template</title>
+    <title>Contact Maisonneuve</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -48,9 +48,6 @@
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/img/college1.jpg" alt="">
-                        </div>
-                        <div class="carousel-item">
                             <img src="/img/college2.jpg" alt="">
                         </div>
                         <div class="carousel-item">
@@ -178,7 +175,7 @@
             <h5 class="mb-3 text-white">liens</h5>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
-                <a href="#!" style="color: whitesmoke;">FAQ</a>
+                <a href="#!" style="color: whitesmoke;">Réglements</a>
               </li>
               <li class="mb-1">
                 <a href="#!" style="color: whitesmoke;">Les enseignants</a>
