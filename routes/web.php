@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 
 Route::get('create', [EtudiantController::class, 'create']);
-Route::get('etudiants', [EtudiantController::class, 'index'])->name('blog.index');
-Route::get('blog/{etudiant}', [EtudiantController::class, 'show'])->name('blog.show');
-
+Route::get('etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
+Route::get('etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
+Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etudiant-create');

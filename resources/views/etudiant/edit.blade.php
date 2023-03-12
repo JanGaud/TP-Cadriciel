@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 @extends('layouts.app')
 @section('title', 'étudiant')
 @section('content')
@@ -19,7 +27,7 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input placeholder="{{ $etudiant->nom }}" type="text" id="nom" class="form-control" />
+                    <input placeholder="{{ $etudiant->nom }}" type="text" id="nom" name="nom" class="form-control" />
                     <label class="form-label" for="nom">Nom complet</label>
                   </div>
                 </div>
@@ -27,26 +35,28 @@
             
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input placeholder="{{ $etudiant->email }}" type="text" id="email" class="form-control" />
+                <input placeholder="{{ $etudiant->email }}" type="email" id="email" name="email" class="form-control" />
                 <label class="form-label" for="email">Adresse courriel</label>
               </div>
             
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input placeholder="{{ $etudiant->adresse }}" type="text" id="adresse" class="form-control" />
+                <input placeholder="{{ $etudiant->adresse }}" type="text" id="adresse" name="adresse" class="form-control" />
                 <label class="form-label" for="adresse">Addresse</label>
               </div>              
               
               <!-- Number input -->
-              {{-- <select id="ville_id" name="ville_id" class="form-select">
+              <div class="form-outline mb-4">
+              <select id="ville_id" name="ville_id" class="form-select">
                 @foreach ($villes as $ville)
                     <option value="{{ $ville->id }}" @if($ville->id === $etudiant->ville_id) selected @endif>{{ $ville->nom }}</option>
                 @endforeach
-              </select> --}}
+              </select>
+              </div>
             
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input  placeholder="{{ $etudiant->telephone }}" type="email" id="telephone" class="form-control" />
+                <input  placeholder="{{ $etudiant->telephone }}" type="text" name="email" id="telephone" class="form-control" />
                 <label class="form-label" for="telephone">Téléphone</label>
               </div>
             

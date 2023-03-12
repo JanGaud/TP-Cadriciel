@@ -23,7 +23,7 @@
                                     <td>{{ $etudiant->nom }}</td>
                                     <td>{{ $etudiant->email }}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('blog.show', $etudiant->id)}}">Modifier</a></li>
+                                        <a class="btn btn-success" href="{{ route('etudiant.edit', $etudiant->id)}}">Modifier</a></li>
                                     </td>
                                 </tr>
                             @endforeach

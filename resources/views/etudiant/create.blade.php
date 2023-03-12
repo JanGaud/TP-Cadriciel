@@ -11,14 +11,13 @@
         </div> <!--/col-12-->
     </div><!--/row-->
             <hr>
-            <form>
+            <form  action="{{route('etudiant-create')}}" method="post">
               @csrf
-              @method('PUT')
               <!-- Text input -->
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input type="text" id="nom" class="form-control" />
+                    <input type="text" name="nom" id="nom" class="form-control" />
                     <label class="form-label" for="nom">Nom complet</label>
                   </div>
                 </div>
@@ -26,26 +25,28 @@
             
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input type="text" id="email" class="form-control" />
+                <input type="email" name="email" id="email" class="form-control" />
                 <label class="form-label" for="email">Adresse courriel</label>
               </div>
             
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input type="text" id="adresse" class="form-control" />
+                <input type="text" name="adresse" id="adresse" class="form-control" />
                 <label class="form-label" for="adresse">Addresse</label>
               </div>              
               
               <!-- Number input -->
-              {{-- <select id="ville_id" name="ville_id" class="form-select">
+              <div class="form-outline mb-4">
+              <select id="ville_id" name="ville_id" class="form-select">
                 @foreach ($villes as $ville)
-                    <option value="{{ $ville->id }}" @if($ville->id === $etudiant->ville_id) selected @endif>{{ $ville->nom }}</option>
+                    <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
                 @endforeach
-              </select> --}}
+              </select>
+              </div>
             
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="telephone" class="form-control" />
+                <input type="text" name="telephone" id="telephone" class="form-control" />
                 <label class="form-label" for="telephone">Téléphone</label>
               </div>
             
