@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-hover">
-                        <thead>
+                        <thead class="primary-color">
                             <tr>
                                 <th>ID</th>
                                 <th>Nom</th>
@@ -33,6 +33,7 @@
             </div>
         </div>
     </div>
+    {{ $etudiants->links() }}
 </section>
 
 

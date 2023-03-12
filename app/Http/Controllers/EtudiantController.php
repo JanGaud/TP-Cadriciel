@@ -9,13 +9,13 @@ class EtudiantController extends Controller
 {
     public function index()
     {
-        $etudiants = Etudiant::all();
+        $etudiants = Etudiant::paginate(25);
         return view('blog.etudiants', ['etudiants' => $etudiants]);
     }
 
         public function show(Etudiant $etudiant)
     {   
-        return view('blog.show', ['Etudiant' => $etudiant]);
+        return view('blog.show', ['etudiant' => $etudiant]);
     }
     
     public function edit(Etudiant $etudiant)
@@ -23,6 +23,9 @@ class EtudiantController extends Controller
         return view('blog.edit', ['etudiant' => $etudiant]);
     }
 
-
+    public function create()
+    {
+        return view('blog.create');
+    }
 }
 

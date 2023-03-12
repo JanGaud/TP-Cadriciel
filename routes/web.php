@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EtudiantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-use App\Http\Controllers\EtudiantController;
+Route::get('create', [EtudiantController::class, 'create']);
 Route::get('etudiants', [EtudiantController::class, 'index'])->name('blog.index');
 Route::get('blog/{etudiant}', [EtudiantController::class, 'show'])->name('blog.show');
 
