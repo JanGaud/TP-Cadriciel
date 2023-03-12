@@ -7,13 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etudiant extends Model
 {
+    protected $table = 'etudiants';
     use HasFactory;
 
-        /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'nom',
         'adresse',

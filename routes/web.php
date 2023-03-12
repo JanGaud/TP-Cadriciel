@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/etudiants', function () {
-    return view('etudiants');
-});
+use App\Http\Controllers\EtudiantController;
+
+Route::get('etudiants', [EtudiantController::class, 'index'])->name('blog.index');
