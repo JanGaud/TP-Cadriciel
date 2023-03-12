@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\EtudiantController;
 
+use App\Http\Controllers\EtudiantController;
 Route::get('etudiants', [EtudiantController::class, 'index'])->name('blog.index');
+Route::get('blog/{etudiant}', [EtudiantController::class, 'show'])->name('blog.show');
+

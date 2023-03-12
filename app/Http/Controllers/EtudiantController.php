@@ -12,5 +12,17 @@ class EtudiantController extends Controller
         $etudiants = Etudiant::all();
         return view('blog.etudiants', ['etudiants' => $etudiants]);
     }
+
+        public function show(Etudiant $etudiant)
+    {   
+        return view('blog.show', ['Etudiant' => $etudiant]);
+    }
+    
+    public function edit(Etudiant $etudiant)
+    {
+        return view('blog.edit', ['etudiant' => $etudiant]);
+    }
+
+
 }
 
