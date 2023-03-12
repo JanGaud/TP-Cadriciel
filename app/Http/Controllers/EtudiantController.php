@@ -31,6 +31,20 @@ class EtudiantController extends Controller
         return view('etudiant.create', ['villes' => $villes]);
     }
 
+    public function update(Request $request, Etudiant $etudiant)
+    {
+        $etudiant->update([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'telephone'  => $request->telephone,
+            'email' => $request->email,
+            'ville_id' => $request->ville_id,
+            'anniversary' => $request->anniversary,
+        ]);
+
+        return redirect(route('blog.edit', $etudiant->id))->withSuccess('Article mis à jour avec success');
+    }
+
     public function store(Request $request)
     {
         Etudiant::create([
@@ -41,6 +55,12 @@ class EtudiantController extends Controller
             'ville_id' => $request->ville_id,
             'anniversary' => $request->anniversary,
         ]);
+        return redirect(route('etudiant.index'));
+    }
+
+    public function destroy(Etudiant $etudiant)
+    {
+        $etudiant->delete();
         return redirect(route('etudiant.index'));
     }
 }

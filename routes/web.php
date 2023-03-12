@@ -22,3 +22,7 @@ Route::get('create', [EtudiantController::class, 'create']);
 Route::get('etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etudiant-create');
+Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
+Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
+Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
+

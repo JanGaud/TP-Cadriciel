@@ -25,6 +25,13 @@
                                     <td>
                                         <a class="btn btn-success" href="{{ route('etudiant.edit', $etudiant->id)}}">Modifier</a></li>
                                     </td>
+                                    <td>
+                                        <form action="{{ route('etudiant.delete', $etudiant->id)}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="submit" class="btn btn-danger" value="Effacer">
+                                         </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
