@@ -33,16 +33,16 @@ class EtudiantController extends Controller
 
     public function update(Request $request, Etudiant $etudiant)
     {
-        $etudiant->update([
-            'nom' => $request->nom,
-            'adresse' => $request->adresse,
-            'telephone'  => $request->telephone,
-            'email' => $request->email,
-            'ville_id' => $request->ville_id,
-            'anniversary' => $request->anniversary,
-        ]);
-
-        return redirect(route('blog.edit', $etudiant->id))->withSuccess('Article mis à jour avec success');
+        $etudiant->nom = $request->input('nom', $etudiant->nom);
+        $etudiant->email = $request->input('email', $etudiant->email);
+        $etudiant->adresse = $request->input('adresse', $etudiant->adresse);
+        $etudiant->ville_id = $request->input('ville_id', $etudiant->ville_id);
+        $etudiant->telephone = $request->input('telephone', $etudiant->telephone);
+    
+        $etudiant->save();
+    
+        return redirect()->route('etudiant.index', $etudiant->id)
+                        ->with('success', 'Etudiant mis à jour avec succès.');
     }
 
     public function store(Request $request)
