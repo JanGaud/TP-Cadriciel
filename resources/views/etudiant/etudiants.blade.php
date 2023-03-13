@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    {{ $etudiants->links() }}
+    <div class="container">{{ $etudiants->links() }}</div>
 </section>
 
 
