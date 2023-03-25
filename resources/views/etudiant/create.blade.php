@@ -11,7 +11,7 @@
         </div> <!--/col-12-->
     </div><!--/row-->
             <hr>
-            <form  action="{{route('etudiant-create')}}" method="post">
+            <form  action="/store" method="post">
               @csrf
               <!-- Text input -->
               <div class="row mb-4">

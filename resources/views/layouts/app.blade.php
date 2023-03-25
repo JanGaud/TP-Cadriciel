@@ -25,7 +25,6 @@
                     <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
                     <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
                 </ul>
-
             </div>
         </div>
     </nav>
