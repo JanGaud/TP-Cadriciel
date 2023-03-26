@@ -19,7 +19,13 @@ return new class extends Migration
             $table->string('email', 50);
             $table->integer('ville_id');
             $table->date('anniversary')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+    
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
         });
         
     }
