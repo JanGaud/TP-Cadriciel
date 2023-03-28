@@ -13,16 +13,18 @@ use App\Http\Controllers\EtudiantController;
 |
 */
 
+// Home page
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+// Etudiant related routes
 Route::get('create', [EtudiantController::class, 'create']);
 Route::get('etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etudiant.store');
 Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
-Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
+Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy');
+
 

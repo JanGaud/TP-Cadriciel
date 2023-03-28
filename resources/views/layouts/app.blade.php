@@ -42,7 +42,7 @@
               </p>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
-              <h5 class="mb-3 text-white">liens</h5>
+              <h5 class="mb-3 text-white">Liens</h5>
               <ul class="list-unstyled mb-0">
                 <li class="mb-1">
                   <a href="#!" style="color: whitesmoke;">Réglements</a>
@@ -56,7 +56,7 @@
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
-              <h5 class="mb-1 text-white">heures d'ouvertures</h5>
+              <h5 class="mb-1 text-white">Heures d'ouvertures</h5>
               <table class="table" style="border-color: #ffffff;">
                 <tbody>
                   <tr>

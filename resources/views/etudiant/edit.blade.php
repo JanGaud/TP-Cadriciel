@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 @extends('layouts.app')
 @section('title', 'étudiant')
 @section('content')
@@ -20,7 +12,7 @@
         </div> <!--/col-12-->
     </div><!--/row-->
             <hr>
-            <form method="POST" action="{{ route('etudiant.update', $etudiant->id) }}">
+            <form method="POST" action="{{ route('etudiant.edit', $etudiant->id) }}">
               @csrf
               @method('PUT')
               <!-- Text input -->
