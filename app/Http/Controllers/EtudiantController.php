@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Etudiant;
 use App\Models\User;
@@ -110,5 +111,23 @@ class EtudiantController extends Controller
         $etudiant->delete();
 
         return redirect(route('etudiant.index'));
+    }
+
+    public function login(Request $request)
+    {
+        // Validation des données
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // essaie de connecter l'utilisateur
+        if (auth()->attempt($validatedData)) {
+            // authentication réussie
+            return redirect()->route('etudiant.index')->with('success', 'Vous êtes maintenant connecté.');
+        } else {
+            // Authentication echouée
+            return 'Adresse email ou mot de passe incorrect.';
+        }
     }
 }

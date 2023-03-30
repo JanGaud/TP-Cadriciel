@@ -27,5 +27,4 @@ Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->nam
 Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
 Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy');
 Route::get('connexion', [EtudiantController::class, 'connexion'])->name('etudiant.connexion');
-
-
+Route::post('/login', [EtudiantController::class, 'login']);

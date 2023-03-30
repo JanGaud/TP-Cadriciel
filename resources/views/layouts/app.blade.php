@@ -22,30 +22,30 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="POST" action="/login">
+                        @csrf
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="password" class="col-form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-outline-primary">Confirmer</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
+
+    <!-- Responsive navbar-->
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg primary-color">
         <div class="container px-5">
@@ -58,9 +58,16 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Acceuil</a></li>
                     <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
                     <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
-                    {{-- <li class="nav-item"><a class="nav-link" href="/connexion">Connexion</a></li> --}}
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#exampleModal" data-whatever="@connexion">Connexion</button>
+                    @if (auth()->check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="/deconnexion">Déconnexion</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary" type="button" data-toggle="modal"
+                                data-target="#exampleModal" data-whatever="@connexion">Connexion</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -119,6 +126,38 @@
         <!-- Copyright -->
     </footer>
 </body>
+
+{{-- fonction pour empecher le modal login de fermer quand il y a une erreur --}}
+<script>
+    $(function() {
+        $('#loginForm').submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            var method = form.attr('method');
+            var data = form.serialize();
+            $.ajax({
+                url: url,
+                type: method,
+                data: data,
+                success: function(response) {
+                    // Redirect to the success page on successful login
+                    window.location.href = '/etudiant';
+                },
+                error: function(xhr) {
+                    // Show the error message inside the modal
+                    var errorMessage = xhr.responseText;
+                    var errorBubble = $(
+                        '<div class="alert alert-danger" role="alert"></div>').html(
+                        errorMessage);
+                    $('#loginModal .modal-body').append(errorBubble);
+                }
+            });
+        });
+    });
+</script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
