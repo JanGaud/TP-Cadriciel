@@ -26,8 +26,14 @@
                 </div>
             @endif
 
-            <!-- Text input -->
+            <!-- Toggle switch -->
+            <div class="form-check form-switch mb-4">
+                <label class="form-check-label" for="is_admin">Créer un compte admin
+                    <input class="form-check-input" type="checkbox" id="is_admin" name="is_admin" value="0">
+                </label>
+            </div>
 
+            <!-- Text input -->
             <div class="row mb-4">
                 <div class="col">
                     <div class="form-outline">
@@ -39,7 +45,6 @@
             </div>
 
             <!-- Text input -->
-
             <div class="form-outline mb-4">
                 <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" />
                 <label class="form-label" for="email">Adresse courriel</label>
@@ -91,5 +96,18 @@
             <button type="submit" class="btn btn-primary btn-block mb-4">Confirmer</button>
         </form>
     </div>
+    <script>
+        const adminToggle = document.getElementById('is_admin');
+
+        adminToggle.addEventListener('change', function() {
+            if (adminToggle.checked) {
+                adminToggle.value = 1;
+                console.log(adminToggle.value);
+            } else {
+                adminToggle.value = 0;
+                console.log(adminToggle.value);
+            }
+        });
+    </script>
 
 @endsection

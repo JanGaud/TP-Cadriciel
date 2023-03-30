@@ -10,6 +10,7 @@ use App\Models\Ville;
 
 class EtudiantController extends Controller
 {
+
     public function index()
     {
         $etudiants = Etudiant::paginate(25);
@@ -76,12 +77,15 @@ class EtudiantController extends Controller
             'anniversary' => ['required', 'date', 'before_or_equal:' . \Carbon\Carbon::now()->subYears(14)->format('Y-m-d')],
         ]);
 
+        // Retrieve the value of the is_admin toggle switch
+        $is_admin = $request->input('is_admin', 0);
+
         // Create a new user
         $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
-
+            'is_admin' => $is_admin,
         ]);
 
         // Create a new etudiant
@@ -94,24 +98,9 @@ class EtudiantController extends Controller
             'user_id' => $user->id,
         ]);
 
-        // Associate the user with the etudiant
-        $etudiant->user()->associate($user);
-        $etudiant->save();
-        $ville->etudiants()->save($etudiant);
-
-        return redirect()->route('etudiant.index', $etudiant->id)
-            ->with('success', 'Etudiant ajouté avec succès.');
-    }
-
-
-    public function destroy(Etudiant $etudiant)
-    {
-        $user = $etudiant->user;
-        $user->delete();
-        $etudiant->delete();
-
         return redirect(route('etudiant.index'));
     }
+
 
     public function login(Request $request)
     {

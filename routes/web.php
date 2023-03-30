@@ -28,3 +28,10 @@ Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->n
 Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy');
 Route::post('/login', [EtudiantController::class, 'login']);
 Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.logout');
+
+
+
+
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     // Admin-only routes here
+// });
