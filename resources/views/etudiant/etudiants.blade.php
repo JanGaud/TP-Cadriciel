@@ -20,9 +20,9 @@
                             <tbody>
                                 @foreach ($etudiants as $etudiant)
                                     <tr>
-                                        <td class="text-center">{{ $etudiant->id }}</td>
-                                        <td class="text-center">{{ $etudiant->user->name }}</td>
-                                        <td class="text-center">{{ $etudiant->user->email }}</td>
+                                        <td>{{ $etudiant->id }}</td>
+                                        <td>{{ $etudiant->user->name }}</td>
+                                        <td>{{ $etudiant->user->email }}</td>
                                         <td>
                                             <a class="btn btn-outline-primary"
                                                 href="{{ route('etudiant.edit', $etudiant->id) }}">Modifier</a>

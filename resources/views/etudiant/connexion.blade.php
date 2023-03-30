@@ -1,19 +1,19 @@
 @extends('layouts.app')
-@section('title', 'étudiant')
+@section('title', 'connexion')
 @section('content')
 
-    <div class="container">
-        <div class="login-page">
-            <div class="form">
-                <form class="register-form">
-                    <input type="text" placeholder="name" />
-                    <input type="password" placeholder="password" />
-                    <input type="text" placeholder="email address" />
-                    <button>create</button>
-                    <p class="message">Already registered? <a href="#">Sign In</a></p>
-                </form>
-            </div>
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+        <label for="email" class="sr-only">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse courriel" required=""
+                autofocus=""></label>
+        <label for="password" class="sr-only">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""></label>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
         </div>
-    </div>
-
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
 @endsection
