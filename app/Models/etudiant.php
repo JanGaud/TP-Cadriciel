@@ -7,20 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etudiant extends Model
 {
-    protected $table = 'etudiants';
     use HasFactory;
 
     protected $fillable = [
-        'nom',
         'adresse',
         'telephone',
-        'email',
-        'ville_id',
         'anniversary',
+        'ville_id',
+        'user_id',
     ];
 
     public function ville()
     {
         return $this->belongsTo(Ville::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

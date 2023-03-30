@@ -42,7 +42,7 @@
             <div class="col-lg-5 mb-4">
                 <h1 class="font-weight-light">Collège de Maisonneuve</h1>
                 <p>
-                    Bienvenue sur la plateforme sociale du collège de Maisonneuve ! Nous sommes ravis de vous présenter un espace en ligne où les étudiants, les parents et les enseignants peuvent interagir, échanger des informations et rester informés de l'actualité de notre école.
+                    Bienvenue sur la plateforme sociale du collège de Maisonneuve ! Nous sommes ravis de vous présenter un espace en ligne où les étudiants et les enseignants peuvent interagir, échanger des informations et rester informés de l'actualité de notre école.
                     <br><br>
                     En utilisant notre plateforme sociale, les étudiants peuvent trouver des informations sur les cours, les devoirs, les projets, les événements et les activités parascolaires, et interagir avec leurs amis et leurs enseignants en ligne.
                 </p>

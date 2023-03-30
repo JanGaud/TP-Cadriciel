@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin', // ajout de la colonne is_admin
     ];
 
     /**
@@ -40,5 +41,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean', // Cast is_admin as a boolean
     ];
+
+    public function etudiant()
+    {
+        return $this->hasOne(Etudiant::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
 }
