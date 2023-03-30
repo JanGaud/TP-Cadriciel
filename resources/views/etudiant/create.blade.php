@@ -60,11 +60,11 @@
                 <label class="form-label" for="adresse">Addresse</label>
               </div>     
               
-              <!-- Text input -->
+              <!-- Date input -->
               <div class="form-outline mb-4">
                 <input type="date" name="anniversary" id="anniversary" class="form-control" value="{{ old('anniversary') }}" />
                 <label class="form-label" for="anniversary">Date d'anniversaire</label>
-              </div>   
+              </div>
               
               <!-- Number input -->
               <div class="form-outline mb-4">
@@ -78,7 +78,7 @@
             
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="text" name="telephone" id="telephone" class="form-control" value="{{ old('telephone') }}" />
+                <input type="text" name="telephone" id="telephone" class="form-control" value="{{ old('telephone') }} " />
                 <label class="form-label" for="telephone">Téléphone</label>
               </div>
             
@@ -86,4 +86,10 @@
               <button type="submit" class="btn btn-primary btn-block mb-4">Confirmer</button>
             </form>
 </div>
+
 @endsection
+
+
+
+
+

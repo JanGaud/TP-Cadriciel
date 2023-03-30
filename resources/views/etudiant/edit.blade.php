@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12 text-center pt-2">
             <h1 class="display-7">
-                {{ $etudiant->nom }}
+                {{ $etudiant->user->name  }}
             </h1>
             <p>Mise à jours des informations</p>
         </div> <!--/col-12-->
@@ -19,7 +19,7 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-outline">
-                    <input value="{{ $etudiant->nom ?? '' }}" placeholder="{{ $etudiant->nom }}" type="text" id="nom" name="nom" class="form-control" />
+                    <input value="{{ $etudiant->user->name }}" placeholder="{{ $etudiant->user->name }}" type="text" id="nom" name="nom" class="form-control" />
                     <label class="form-label" for="nom">Nom complet</label>
                   </div>
                 </div>
@@ -27,7 +27,7 @@
             
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input value="{{ $etudiant->email ?? '' }}" placeholder="{{ $etudiant->email }}" type="email" id="email" name="email" class="form-control" />
+                <input value="{{ $etudiant->user->email }}" placeholder="{{ $etudiant->user->email }}" type="email" id="email" name="email" class="form-control" />
                 <label class="form-label" for="email">Adresse courriel</label>
               </div>
             

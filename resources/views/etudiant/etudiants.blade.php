@@ -20,10 +20,10 @@
                             @foreach ($etudiants as $etudiant)
                                 <tr>
                                     <td>{{ $etudiant->id }}</td>
-                                    <td>{{ $etudiant->nom }}</td>
-                                    <td>{{ $etudiant->email }}</td>
+                                    <td>{{ $etudiant->user->name }}</td>
+                                    <td>{{ $etudiant->user->email }}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('etudiant.edit', $etudiant->id)}}">Modifier</a></li>
+                                        <a class="btn btn-success" href="{{ route('etudiant.edit', $etudiant->id)}}">Modifier</a>
                                     </td>
                                     <td>
                                         <form action="{{ route('etudiant.destroy', $etudiant->id)}}" method="post">

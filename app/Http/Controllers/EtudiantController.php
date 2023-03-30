@@ -12,8 +12,14 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiants = Etudiant::paginate(25);
-        return view('etudiant.etudiants', ['etudiants' => $etudiants]);
+        $villes = Ville::all();
+        return view('etudiant.etudiants', [
+            'etudiants' => $etudiants,
+            'villes' => $villes,
+            'user' => auth()->user(),
+        ]);
     }
+    
 
     public function show(Etudiant $etudiant)
     {
@@ -23,8 +29,12 @@ class EtudiantController extends Controller
     public function edit(Etudiant $etudiant)
     {
         $villes = Ville::all();
-        return view('etudiant.edit', ['villes' => $villes, 'etudiant' => $etudiant]);
-    }
+        return view('etudiant.edit', [
+            'etudiant' => $etudiant,
+            'villes' => $villes,
+            'user' => auth()->user()
+        ]);
+    }    
 
     public function create()
     {
@@ -52,11 +62,11 @@ class EtudiantController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed',
+            'password' => ['required', 'confirmed', 'min:7'],
             'ville_id' => 'required',
             'adresse' => 'required',
-            'telephone' => 'required',
-            'anniversary' => 'required',
+            'telephone' => ['required', 'regex:/^\+?[1-9]\d{1,14}$/'],
+            'anniversary' => ['required', 'date', 'before_or_equal:' . \Carbon\Carbon::now()->subYears(14)->format('Y-m-d')],
         ]);
 
         // Create a new user
@@ -80,7 +90,6 @@ class EtudiantController extends Controller
         // Associate the user with the etudiant
         $etudiant->user()->associate($user);
         $etudiant->save();
-
         $ville->etudiants()->save($etudiant);
 
         return redirect()->route('etudiant.index', $etudiant->id)
