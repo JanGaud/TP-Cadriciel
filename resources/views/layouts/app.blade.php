@@ -46,7 +46,6 @@
     </div>
 
     <!-- Responsive navbar-->
-    <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg primary-color">
         <div class="container px-5">
             <a class="navbar-brand" href="/"><img src="/img/logoCollege.png" alt=""></a>
@@ -56,16 +55,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Acceuil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
                     @if (auth()->check())
+                        <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/deconnexion">Déconnexion</a>
+                            <a class="nav-link" href="{{ route('etudiant.logout') }}">Déconnexion</a>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-primary" type="button" data-toggle="modal"
-                                data-target="#exampleModal" data-whatever="@connexion">Connexion</a>
+                            <a class="nav-link" type="button" data-toggle="modal" data-target="#exampleModal"
+                                data-whatever="@connexion">Connexion</a>
                         </li>
                     @endif
                 </ul>
