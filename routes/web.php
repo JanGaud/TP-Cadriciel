@@ -26,5 +26,6 @@ Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etud
 Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
 Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy');
+Route::get('connexion', [EtudiantController::class, 'connexion'])->name('etudiant.connexion');
 
 

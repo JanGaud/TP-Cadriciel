@@ -19,7 +19,11 @@ class EtudiantController extends Controller
             'user' => auth()->user(),
         ]);
     }
-    
+
+    public function connexion()
+    {
+        return view('etudiant.connexion');
+    }
 
     public function show(Etudiant $etudiant)
     {
@@ -34,7 +38,7 @@ class EtudiantController extends Controller
             'villes' => $villes,
             'user' => auth()->user()
         ]);
-    }    
+    }
 
     public function create()
     {
@@ -44,14 +48,16 @@ class EtudiantController extends Controller
 
     public function update(Request $request, Etudiant $etudiant)
     {
-        $etudiant->name = $request->input('name', $etudiant->name);
-        $etudiant->email = $request->input('email', $etudiant->email);
+        $user = $etudiant->user;
+        $user->name = $request->input('name', $user->name);
+        $user->email = $request->input('email', $user->email);
         $etudiant->adresse = $request->input('adresse', $etudiant->adresse);
         $etudiant->anniversary = $request->input('anniversary', $etudiant->adresse);
         $etudiant->ville_id = $request->input('ville_id', $etudiant->ville_id);
         $etudiant->telephone = $request->input('telephone', $etudiant->telephone);
 
-        $etudiant->save();
+        $user->save(); // sauvegarde le user
+        $etudiant->save(); // ensuite sauvegarde l'étudiant
 
         return redirect()->route('etudiant.index', $etudiant->id)
             ->with('success', 'Etudiant mis à jour avec succès.');
