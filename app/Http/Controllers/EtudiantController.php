@@ -22,11 +22,6 @@ class EtudiantController extends Controller
         ]);
     }
 
-    public function connexion()
-    {
-        return view('etudiant.connexion');
-    }
-
     public function show(Etudiant $etudiant)
     {
         return view('etudiant.edit', ['etudiant' => $etudiant]);
@@ -113,7 +108,7 @@ class EtudiantController extends Controller
         // essaie de connecter l'utilisateur
         if (auth()->attempt($validatedData)) {
             // authentication réussie
-            return redirect()->route('etudiant.index')->with('success', 'Vous êtes maintenant connecté.');
+            return redirect()->route('home')->with('success', 'Vous êtes maintenant connecté.');
         } else {
             // Authentication echouée
             return 'Adresse email ou mot de passe incorrect.';
@@ -123,6 +118,6 @@ class EtudiantController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('etudiant.index')->with('success', 'Vous êtes maintenant déconnecté.');
+        return redirect()->route('home')->with('success', 'Vous êtes maintenant déconnecté.');
     }
 }

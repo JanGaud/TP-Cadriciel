@@ -10,7 +10,6 @@
                         <table class="table table-hover">
                             <thead class="primary-color">
                                 <tr>
-                                    <th>ID</th>
                                     <th>Nom</th>
                                     <th>Email</th>
                                     <th></th>
@@ -20,9 +19,17 @@
                             <tbody>
                                 @foreach ($etudiants as $etudiant)
                                     <tr>
-                                        <td>{{ $etudiant->id }}</td>
-                                        <td>{{ $etudiant->user->name }}</td>
-                                        <td>{{ $etudiant->user->email }}</td>
+                                        <td>
+                                            @if ($etudiant->user->isAdmin())
+                                                <i class="fa-solid fa-crown" title="Admin"></i>&nbsp
+                                            @else
+                                                <i class="fa-solid fa-graduation-cap" title="Etudiant"></i>&nbsp
+                                            @endif
+                                            {{ $etudiant->user->name }}
+                                        </td>
+                                        <td>
+                                            {{ $etudiant->user->email }}
+                                        </td>
                                         <td>
                                             <a class="btn btn-outline-primary"
                                                 href="{{ route('etudiant.edit', $etudiant->id) }}">Modifier</a>
@@ -36,6 +43,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
+
                             </tbody>
                         </table>
                     </div>

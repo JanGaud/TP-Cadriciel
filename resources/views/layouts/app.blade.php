@@ -49,29 +49,30 @@
     <nav class="navbar navbar-expand-lg primary-color">
         <div class="container px-1">
             <a class="navbar-brand" href="/"><img src="/img/logoCollege.png" alt=""></a>
-            @if (Auth::check())
-                <small>Welcome,
-                    <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}">{{ Auth::user()->name }}
-                    </a>
-                    !</small>
-            @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Acceuil</a></li>
                     @if (auth()->check())
-                        @if (auth()->check() &&
-                                auth()->user()->isAdmin())
+                        @if (auth()->user()->isAdmin())
                             <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
                             <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
-                        @else
-                            <li class="nav-item"><span>Not admin</span></li>
                         @endif
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('etudiant.logout') }}">Déconnexion</a>
-                        </li>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
+                                    class="dropdown-item" type="button">Modifier les informations</a>
+                                <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
+                                    type="button">Déconnexion</a>
+                            </div>
+                        </div>
                     @else
                         <li class="nav-item">
                             <a class="nav-link" type="button" data-toggle="modal" data-target="#exampleModal"
@@ -79,6 +80,7 @@
                         </li>
                     @endif
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -170,5 +172,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/e69611a5eb.js" crossorigin="anonymous"></script>
 
 </html>

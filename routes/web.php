@@ -16,7 +16,7 @@ use App\Http\Controllers\EtudiantController;
 // Home page
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Etudiant related routes
 Route::get('create', [EtudiantController::class, 'create']);
