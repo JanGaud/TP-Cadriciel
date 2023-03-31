@@ -29,9 +29,14 @@ Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy']
 Route::post('/login', [EtudiantController::class, 'login']);
 Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.logout');
 
+// Forum related routes
 
 
+// Admin-only routes
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Admin-only routes here
+});
 
-// Route::middleware(['auth', 'admin'])->group(function () {
-//     // Admin-only routes here
-// });
+Route::middleware(['auth'])->group(function () {
+    // Authenticated-only routes here
+});

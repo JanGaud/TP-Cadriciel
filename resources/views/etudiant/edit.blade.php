@@ -22,7 +22,7 @@
                 <div class="col">
                     <div class="form-outline">
                         <input value="{{ $etudiant->user->name }}" placeholder="{{ $etudiant->user->name }}" type="text"
-                            id="nom" name="nom" class="form-control" />
+                            id="name" name="name" class="form-control" />
                         <label class="form-label" for="nom">Nom complet</label>
                     </div>
                 </div>
