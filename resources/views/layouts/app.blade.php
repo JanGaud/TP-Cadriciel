@@ -47,8 +47,14 @@
 
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg primary-color">
-        <div class="container px-5">
+        <div class="container px-1">
             <a class="navbar-brand" href="/"><img src="/img/logoCollege.png" alt=""></a>
+            @if (Auth::check())
+                <small>Welcome,
+                    <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}">{{ Auth::user()->name }}
+                    </a>
+                    !</small>
+            @endif
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -60,6 +66,8 @@
                                 auth()->user()->isAdmin())
                             <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
                             <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
+                        @else
+                            <li class="nav-item"><span>Not admin</span></li>
                         @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('etudiant.logout') }}">Déconnexion</a>
