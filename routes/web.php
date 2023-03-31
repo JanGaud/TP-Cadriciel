@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\ForumController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,13 @@ Route::post('/login', [EtudiantController::class, 'login']);
 Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.logout');
 
 // Forum related routes
+Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
+
+
+
+
+
+
 
 
 // Admin-only routes

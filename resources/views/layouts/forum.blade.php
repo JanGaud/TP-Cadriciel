@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>{{ config('app.name') }} - @yield('title')</title>
+    <title>Blog Home - Start Bootstrap Template</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="../social/css/styles.css" rel="stylesheet" />
+    <link href="../social/css/social.css" rel="stylesheet" />
+
 </head>
+
 
 <body>
     <!-- Connexion Modal-->
@@ -141,36 +142,7 @@
     </footer>
 </body>
 
-{{-- fonction pour empecher le modal login de fermer quand il y a une erreur --}}
-<script>
-    $(function() {
-        $('#loginForm').submit(function(e) {
-            e.preventDefault();
-            var form = $(this);
-            var url = form.attr('action');
-            var method = form.attr('method');
-            var data = form.serialize();
-            $.ajax({
-                url: url,
-                type: method,
-                data: data,
-                success: function(response) {
-                    // Redirect to the success page on successful login
-                    window.location.href = '/etudiant';
-                },
-                error: function(xhr) {
-                    // Show the error message inside the modal
-                    var errorMessage = xhr.responseText;
-                    var errorBubble = $(
-                        '<div class="alert alert-danger" role="alert"></div>').html(
-                        errorMessage);
-                    $('#loginModal .modal-body').append(errorBubble);
-                }
-            });
-        });
-    });
-</script>
-
+<script src="../social/js/scripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

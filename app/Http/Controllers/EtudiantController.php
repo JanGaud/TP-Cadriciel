@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Models\Etudiant;
 use App\Models\User;
@@ -42,6 +41,16 @@ class EtudiantController extends Controller
         $villes = Ville::all();
         return view('etudiant.create', ['villes' => $villes]);
     }
+
+    public function destroy(Etudiant $etudiant)
+    {
+        $user = $etudiant->user;
+        $etudiant->delete();
+        $user->delete();
+        return redirect()->route('etudiant.index')->with('success', 'Etudiant et utilisateur associé supprimés avec succès.');
+    }
+
+
 
     public function update(Request $request, Etudiant $etudiant)
     {
