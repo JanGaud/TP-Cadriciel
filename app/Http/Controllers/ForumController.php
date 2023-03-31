@@ -11,9 +11,10 @@ use App\Models\Ville;
 
 class ForumController extends Controller
 {
-
     public function index()
     {
-        return view('forum.index');
+        $posts = Post::all();
+
+        return view('forum.index', compact('posts'));
     }
 }

@@ -70,7 +70,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
-                                    class="dropdown-item" type="button">Modifier les informations</a>
+                                    class="dropdown-item" type="button">Modifier mes informations</a>
                                 <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
                                     type="button">Déconnexion</a>
                             </div>

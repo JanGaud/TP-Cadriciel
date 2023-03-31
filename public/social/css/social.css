@@ -39,7 +39,7 @@ footer .table {
 }
 
 .social-header {
-    background: linear-gradient(-45deg, #ffffff, #90c2ff, #ffffff, #ffffff);
+    background: linear-gradient(-45deg, #ffffff, #b6d7ff, #ffffff, #ffffff);
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     height: auto;

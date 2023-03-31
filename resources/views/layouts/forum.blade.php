@@ -17,35 +17,6 @@
 
 
 <body>
-    <!-- Connexion Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" action="/login">
-                        @csrf
-                        <div class="form-group">
-                            <label for="email" class="col-form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-outline-primary">Confirmer</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg primary-color">
         <div class="container px-1">
@@ -56,9 +27,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                    {{-- <li class="nav-item"><a class="nav-link active" aria-current="page"
                             href="{{ route('forum.index') }}">Coin Social</a>
-                    </li>
+                    </li> --}}
                     @if (auth()->check())
                         @if (auth()->user()->isAdmin())
                             <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
@@ -71,7 +42,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
-                                    class="dropdown-item" type="button">Modifier les informations</a>
+                                    class="dropdown-item" type="button">Modifier mes informations</a>
                                 <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
                                     type="button">Déconnexion</a>
                             </div>
