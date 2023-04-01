@@ -16,42 +16,42 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Technologie',
+            'title' => 'Technologie',
             'description' => 'Articles sur les dernières technologies, les gadgets et les appareils électroniques',
         ]);
 
         Category::create([
-            'name' => 'Nourriture',
+            'title' => 'Nourriture',
             'description' => 'Articles sur la cuisine, les recettes, les restaurants et les aliments',
         ]);
 
         Category::create([
-            'name' => 'Sport',
+            'title' => 'Sport',
             'description' => 'Articles sur les sports, les événements sportifs, les équipes et les athlètes',
         ]);
 
         Category::create([
-            'name' => 'Événement',
+            'title' => 'Événement',
             'description' => 'Articles sur les événements locaux, nationaux et internationaux, comme les festivals, les concerts et les expositions',
         ]);
 
         Category::create([
-            'name' => 'Spectacle',
+            'title' => 'Spectacle',
             'description' => 'Articles sur les spectacles, les performances et les arts du spectacle, comme le théâtre, la danse et la comédie',
         ]);
 
         Category::create([
-            'name' => 'Alerte',
+            'title' => 'Alerte',
             'description' => 'Articles sur les alertes de sécurité, les urgences et les événements en temps réel',
         ]);
 
         Category::create([
-            'name' => 'Voyage et Tourisme',
+            'title' => 'Voyage et Tourisme',
             'description' => 'Articles sur les destinations de voyage, les attractions touristiques, les guides de voyage et les conseils pour les voyageurs',
         ]);
 
         Category::create([
-            'name' => 'Autre',
+            'title' => 'Autre',
             'description' => 'Articles sur les sujets divers et variés, si vous ne trouvez pas de catégorie appropriée',
         ]);
     }
