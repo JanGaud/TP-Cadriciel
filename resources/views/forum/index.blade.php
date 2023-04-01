@@ -63,11 +63,15 @@
                     <div class="card mb-4">
                         <div class="card-header">Catégories</div>
                         <div class="card-body">
-                            <ul class="list-unstyled mb-0">
-                                @foreach ($posts as $post)
-                                    <li><a href="#!">{{ $post->category }}</a></li>
+                            <div class="row">
+                                @foreach ($categories as $category)
+                                    <div class="col-sm-6 mb-3">
+                                        <div>
+                                            <a href="#">{{ $category->title }}</a>
+                                        </div>
+                                    </div>
                                 @endforeach
-                            </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- Side widget-->

@@ -25,12 +25,13 @@ footer .table {
 /*============== social-banner=================*/
 
 .social-banner {
-    box-shadow: inset -5px -5px 10px 10px rgba(0, 0, 0, 0.059);
+    box-shadow: inset -5px -5px 10px 10px rgba(0, 0, 0, 0.107);
     position: relative;
     width: 100%;
-    height: 30vw;
+    height: 32vw;
+    min-height: 300px;
     overflow: hidden;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 .social-banner img {
@@ -39,7 +40,7 @@ footer .table {
 }
 
 .social-header {
-    background: linear-gradient(-45deg, #ffffff, #b6d7ff, #ffffff, #ffffff);
+    background: linear-gradient(-45deg, #ffffff, #acacac, #ffffff, #ffffff);
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     height: auto;
