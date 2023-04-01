@@ -27,18 +27,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {{-- <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="{{ route('forum.index') }}">Coin Social</a>
-                    </li> --}}
                     @if (auth()->check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-square-plus"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+                        </li>
+                        {{-- Dropdown utilisateur --}}
                         <div class="dropdown">
                             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenu2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a href="#" class="dropdown-item" type="button">Profil</a>
                                 <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
-                                    class="dropdown-item" type="button">Modifier mes informations</a>
+                                    class="dropdown-item" type="button">Modifier mon compte</a>
                                 <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
                                     type="button">Déconnexion</a>
                             </div>
