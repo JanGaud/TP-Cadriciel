@@ -31,10 +31,6 @@
                             href="{{ route('forum.index') }}">Coin Social</a>
                     </li> --}}
                     @if (auth()->check())
-                        @if (auth()->user()->isAdmin())
-                            <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
-                        @endif
                         <div class="dropdown">
                             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenu2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -107,3 +107,9 @@ footer .table {
     font-weight: 300;
     font-size: 2vw;
 }
+
+/*============== card categorie=================*/
+
+.card-categorie {
+    width: 100%;
+}

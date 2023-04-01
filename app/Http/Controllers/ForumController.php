@@ -13,7 +13,7 @@ class ForumController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('category')->paginate(4);
 
         return view('forum.index', compact('posts'));
     }
