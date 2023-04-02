@@ -1,5 +1,5 @@
 @extends('layouts.forum')
-@section('title', 'Post')
+@section('title', 'Forum')
 @section('content')
 
     <div class="container">
