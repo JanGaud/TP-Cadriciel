@@ -35,9 +35,7 @@ Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.log
 Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('forum/create', [PostController::class, 'create'])->name('forum.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::get('/forum/{post}', [ForumController::class, 'show'])->name('forum.show');
-
-
+Route::get('/forum/{post}', [PostController::class, 'show'])->name('forum.show');
 
 
 // Admin-only routes

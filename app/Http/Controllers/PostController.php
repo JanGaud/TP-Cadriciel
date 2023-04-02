@@ -37,13 +37,13 @@ class PostController extends Controller
         $post->category_id = $validatedData['categories'][0];
         $post->save();
 
-        return redirect()->route('forum.show')->with('success', 'Post created successfully!');
+        return redirect()->route('forum.show', ['post' => $post])->with('success', 'Post created successfully!');
     }
 
 
     public function show(Post $post)
     {
-        return view('posts.show', ['post' => $post]);
+        return view('forum.show', ['post' => $post]);
     }
 
     public function edit(Post $post)

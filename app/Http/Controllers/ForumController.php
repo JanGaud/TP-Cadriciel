@@ -20,9 +20,4 @@ class ForumController extends Controller
 
         return view('forum.index', ['posts' => $posts, 'categories' => $categories]);
     }
-
-    public function show(Post $post)
-    {
-        return view('forum.show', ['post' => $post]);
-    }
 }
