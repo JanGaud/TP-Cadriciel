@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -16,23 +18,28 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('forum.post', ['categories' => $categories]);
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
+            'title' => 'required|max:100',
+            'content' => 'required|min:30',
+            'categories' => 'required',
         ]);
 
         $post = new Post;
         $post->title = $validatedData['title'];
         $post->content = $validatedData['content'];
+        $post->user_id = Auth::id();
+        $post->category_id = $validatedData['categories'][0];
         $post->save();
 
-        return redirect()->route('posts.index')->with('success', 'Post created successfully!');
+        return redirect()->route('forum.show')->with('success', 'Post created successfully!');
     }
+
 
     public function show(Post $post)
     {

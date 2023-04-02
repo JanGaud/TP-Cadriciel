@@ -12,6 +12,19 @@
     background-color: #003e7e;
 }
 
+/*==============Post header=================*/
+
+.post-header {
+    width: 100%;
+    height: 350px;
+}
+
+.post-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*==============Footer modif=================*/
 
 footer {
@@ -62,6 +75,7 @@ footer .table {
 }
 
 .banner-txt {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -74,7 +88,6 @@ footer .table {
 }
 
 .banner-txt h2 {
-    z-index: 10;
     text-shadow: rgba(0, 0, 0, 0.76) 2px 2px 5px;
     color: #003e7e;
     font-size: clamp(100px, 11vw, 11vw);
@@ -106,10 +119,10 @@ footer .table {
 }
 
 .banner-txt p {
-    z-index: 10;
     color: black;
+    text-shadow: #ffffff78 2px 2px 5px;
     font-weight: 300;
-    font-size: clamp(18px, 3vw, 4vw);
+    font-size: clamp(17px, 3vw, 4vw);
 }
 
 /*============== card categorie=================*/
@@ -121,5 +134,55 @@ footer .table {
 /*============== Navigation icon=================*/
 i {
     font-size: 25px;
-    margin-right: 20px;
+    margin-right: 25px;
+}
+
+i {
+    transition: transform 0.2s ease-in-out;
+}
+
+i:hover {
+    background: -moz-linear-gradient(top, #2c45e7 0%, #429ec6 100%);
+    background: -webkit-linear-gradient(top, #2c45e7 0%, #429ec6 100%);
+    background: linear-gradient(to bottom, #2c45e7 0%, #429ec6 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 0.7s;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+.active {
+    background: -moz-linear-gradient(top, #2c45e7 0%, #429ec6 100%);
+    background: -webkit-linear-gradient(top, #2c45e7 0%, #429ec6 100%);
+    background: linear-gradient(to bottom, #2c45e7 0%, #429ec6 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 0.7s;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-3px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

@@ -18,6 +18,11 @@ class ForumController extends Controller
         $posts = Post::with('category')->paginate(4);
         $categories = Category::all();
 
-        return view('forum.index', ['posts'=>$posts, 'categories'=>$categories]);
+        return view('forum.index', ['posts' => $posts, 'categories' => $categories]);
+    }
+
+    public function show(Post $post)
+    {
+        return view('forum.show', ['post' => $post]);
     }
 }

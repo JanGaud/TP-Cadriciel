@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,10 +33,9 @@ Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.log
 
 // Forum related routes
 Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
-
-
-
-
+Route::get('forum/create', [PostController::class, 'create'])->name('forum.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/forum/{post}', [ForumController::class, 'show'])->name('forum.show');
 
 
 

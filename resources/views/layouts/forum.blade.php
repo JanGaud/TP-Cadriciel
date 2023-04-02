@@ -29,7 +29,13 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     @if (auth()->check())
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-square-plus"></i></a>
+                            <a class="nav-link" href="{{ route('forum.index') }}">
+                                <i class="fa-solid fa-school"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('forum.create') }}"><i
+                                    class="fa-solid fa-square-plus"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i></a>
@@ -116,6 +122,16 @@
         <!-- Copyright -->
     </footer>
 </body>
+
+<script>
+    var currentURL = window.location.href;
+    var links = document.querySelectorAll('.nav-link');
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].href === currentURL) {
+            links[i].classList.add('active');
+        }
+    }
+</script>
 
 <script src="../social/js/scripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

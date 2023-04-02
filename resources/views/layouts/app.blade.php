@@ -61,7 +61,7 @@
                             <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
                             <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
                         @endif
-                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                        <li class="nav-item"><a class="nav-link" aria-current="page"
                                 href="{{ route('forum.index') }}">Coin Social</a>
                         </li>
                         <div class="dropdown">

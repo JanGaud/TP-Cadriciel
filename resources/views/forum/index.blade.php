@@ -1,5 +1,5 @@
 @extends('layouts.forum')
-@section('title', 'étudiant')
+@section('title', 'Forum')
 @section('content')
 
     <body>
@@ -30,8 +30,10 @@
                             <!-- Blog post-->
                             @foreach ($posts as $post)
                                 <div class="card mb-4">
-                                    <a href="#!"><img class="card-img-top"
-                                            src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="post-header">
+                                        <img class="card-img-top" src="/social/assets/pexels-stefan-lorentz-668137.jpg"
+                                            alt="..." />
+                                    </div>
                                     <div class="card-body">
                                         <div class="small text-muted">{{ $post->created_at->format('F j, Y') }}</div>
                                         <h2 class="card-title h4">{{ $post->title }}</h2>
