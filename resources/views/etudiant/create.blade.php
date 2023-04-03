@@ -28,7 +28,7 @@
 
             <!-- Toggle switch -->
             <div class="form-check form-switch mb-4">
-                <label class="form-check-label" for="is_admin">Créer un compte admin
+                <label class="form-check-label" for="is_admin">@lang('lang.user_admin')
                     <input class="form-check-input" type="checkbox" id="is_admin" name="is_admin" value="0">
                 </label>
             </div>
@@ -39,7 +39,7 @@
                     <div class="form-outline">
                         <input type="text" name="name" id="name" class="form-control"
                             value="{{ old('name') }}" />
-                        <label class="form-label" for="name">Nom complet</label>
+                        <label class="form-label" for="name">@lang('lang.name')</label>
                     </div>
                 </div>
             </div>
@@ -47,38 +47,38 @@
             <!-- Text input -->
             <div class="form-outline mb-4">
                 <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" />
-                <label class="form-label" for="email">Adresse courriel</label>
+                <label class="form-label" for="email">@lang('lang.email')</label>
             </div>
 
             <!-- Text input -->
             <div class="form-outline mb-4">
                 <input type="password" name="password" id="password" class="form-control" value="{{ old('password') }}" />
-                <label class="form-label" for="password">Mot de passe</label>
+                <label class="form-label" for="password">@lang('lang.password')</label>
             </div>
 
             <!-- Text input -->
             <div class="form-outline mb-4">
                 <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" />
-                <label class="form-label" for="password_confirmation">Confirmation du mot de passe</label>
+                <label class="form-label" for="password_confirmation">@lang('lang.password_c')</label>
             </div>
 
             <!-- Text input -->
             <div class="form-outline mb-4">
                 <input type="text" name="adresse" id="adresse" class="form-control" value="{{ old('adresse') }}" />
-                <label class="form-label" for="adresse">Addresse</label>
+                <label class="form-label" for="adresse">@lang('lang.adress')</label>
             </div>
 
             <!-- Date input -->
             <div class="form-outline mb-4">
                 <input type="date" name="anniversary" id="anniversary" class="form-control"
                     value="{{ old('anniversary') }}" />
-                <label class="form-label" for="anniversary">Date d'anniversaire</label>
+                <label class="form-label" for="anniversary">@lang('lang.anniversary')</label>
             </div>
 
             <!-- Number input -->
             <div class="form-outline mb-4">
                 <select id="ville_id" name="ville_id" class="form-select">
-                    <option value="" disabled selected>Sélectionner la ville</option>
+                    <option value="" disabled selected>@lang('lang.select_city')</option>
                     @foreach ($villes as $ville)
                         <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
                     @endforeach
@@ -89,11 +89,11 @@
             <div class="form-outline mb-4">
                 <input type="text" name="telephone" id="telephone" class="form-control"
                     value="{{ old('telephone') }} " />
-                <label class="form-label" for="telephone">Téléphone</label>
+                <label class="form-label" for="telephone">@lang('lang.phone')</label>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Confirmer</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">@lang('lang.sign_up')</button>
         </form>
     </div>
     <script>

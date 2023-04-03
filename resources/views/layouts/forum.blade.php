@@ -70,30 +70,27 @@
         <div class="container p-4">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text-white">Citation du jour</h5>
+                    <h5 class="mb-3 text-white">@lang('lang.quote_title')</h5>
                     <p>
-                        "La communication est le ciment qui maintient les relations unies et florissantes. Elle est
-                        comme une pluie fine qui arrose les âmes et les esprits, nourrissant les racines de l'empathie
-                        et de la compréhension. Sans une communication claire et ouverte, les ponts entre les personnes
-                        peuvent s'effondrer, laissant place à la méfiance, aux malentendus et à la solitude."
+                        "@lang('lang.quote')"
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-white">Liens</h5>
+                    <h5 class="mb-3 text-white">@lang('lang.links')</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Réglements</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.rules')</a>
                         </li>
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Les enseignants</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.link_teachers')</a>
                         </li>
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Les étudiants</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.link_students')</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-1 text-white">Heures d'ouvertures</h5>
+                    <h5 class="mb-1 text-white">@lang('lang.opening_hours')</h5>
                     <table class="table" style="border-color: #ffffff;">
                         <tbody>
                             <tr>
@@ -119,11 +116,12 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="dropdown-item @if ($locale == 'en') lang-select @endif"
-                                href="/lang/en"><img src="{{ asset('/img/flag/united-kingdom.png') }}"> English</a>
+                            <a class="dropdown-item @if ($locale == 'en') bg-warning @endif"
+                                href="/lang/en"><img src="{{ asset('/img/flag/united-kingdom.png') }}">
+                                English</a>
                         </li>
                         <li class="nav-item">
-                            <a class="dropdown-item @if ($locale == 'fr') lang-select @endif"
+                            <a class="dropdown-item @if ($locale == 'fr') bg-warning @endif"
                                 href="/lang/fr"><img src="{{ asset('/img/flag/france.png') }}"> Français</a>
                         </li>
                     </ul>

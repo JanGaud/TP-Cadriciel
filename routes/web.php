@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\LocalizationController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LocalizationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +18,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-// Localization routes
+// language switcher
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
+
 
 // Home page
 Route::get('/', function () {

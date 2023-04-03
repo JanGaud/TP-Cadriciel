@@ -40,99 +40,100 @@
                 </div>
             </div>
             <div class="col-lg-5 mb-4">
-                <h1 class="font-weight-light">Collège de Maisonneuve</h1>
+                <h1 class="font-weight-light">@lang('lang.school_name')</h1>
                 <p>
-                    Bienvenue sur la plateforme sociale du collège de Maisonneuve ! Nous sommes ravis de vous présenter un espace en ligne où les étudiants et les enseignants peuvent interagir, échanger des informations et rester informés de l'actualité de notre école.
+                    @lang('lang.plateform_desc1')
                     <br><br>
-                    En utilisant notre plateforme sociale, les étudiants peuvent trouver des informations sur les cours, les devoirs, les projets, les événements et les activités parascolaires, et interagir avec leurs amis et leurs enseignants en ligne.
+                    @lang('lang.plateform_desc2')
                 </p>
-                <a class="btn btn-primary" href="#!">En savoir plus!</a>
+                <a class="btn btn-primary" href="#!">@lang('lang.read_more')</a>
             </div>
         </div>
     </div>
-        <!-- Parralax -->
-        <div class="parralax-container mt-5">
-            <section class="section-background parallax">
-            
-            </section>
+    <!-- Parralax -->
+    <div class="parralax-container mt-5">
+        <section class="section-background parallax">
+
+        </section>
+    </div>
+    <!-- Content Row-->
+    <div class="container bootstrap snippets bootdeys">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">04-22-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_blue_title')</a></h4>
+                            <p class="description">@lang('lang.card_blue_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">05-14-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_green_title')</a></h4>
+                            <p class="description">@lang('lang.card_green_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">06-10-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_yellow_title')</a></h4>
+                            <p class="description">@lang('lang.card_yellow_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">03-29-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_brown_title')</a></h4>
+                            <p class="description">@lang('lang.card_brown_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">02-16-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_purple_title')</a></h4>
+                            <p class="description">@lang('lang.card_purple_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 content-card">
+                <div class="card-big-shadow">
+                    <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
+                        <div class="content">
+                            <h6 class="category">09-01-2023</h6>
+                            <h4 class="title"><a href="#">@lang('lang.card_orange_title')</a></h4>
+                            <p class="description">@lang('lang.card_orange_p')</p>
+                        </div>
+                    </div> <!-- end card -->
+                </div>
+            </div>
         </div>
-        <!-- Content Row-->
-        <div class="container bootstrap snippets bootdeys">
-            <div class="row">
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">04-22-2023</h6>
-                                <h4 class="title"><a href="#">Portes ouvertes</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">05-14-2023</h6>
-                                <h4 class="title"><a href="#">Collecte de sang</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">06-10-2023</h6>
-                                <h4 class="title"><a href="#">Conférence sur les relations</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">03-29-2023</h6>
-                                <h4 class="title"><a href="#">Final collégial de Hockey</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">02-16-2023</h6>
-                                <h4 class="title"><a href="#">Salon d'emploi</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 content-card">
-                    <div class="card-big-shadow">
-                        <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
-                            <div class="content">
-                                <h6 class="category">09-01-2023</h6>
-                                <h4 class="title"><a href="#">Journée de la culture</a></h4>
-                                <p class="description">What all of these have in common is that they're pulling information out of the app or the service and making it relevant to the moment. </p>
-                            </div>
-                        </div> <!-- end card -->
-                    </div>
-                </div>
-            </div>
-            </div>
-</html>
+    </div>
+
+    </html>
 
 
 @endsection

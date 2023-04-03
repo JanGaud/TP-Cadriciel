@@ -22,23 +22,24 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">@lang('lang.login')</h5>
                 </div>
                 <div class="modal-body">
                     <form method="POST" action="/login">
                         @csrf
                         <div class="form-group">
-                            <label for="email" class="col-form-label">Email</label>
+                            <label for="email" class="col-form-label">@lang('lang.email')</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-form-label">Mot de passe</label>
+                            <label for="password" class="col-form-label">@lang('lang.password')</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-outline-primary">Confirmer</button>
+                    <button type="button" class="btn btn-outline-danger"
+                        data-dismiss="modal">@lang('lang.close')</button>
+                    <button type="submit" class="btn btn-outline-primary">@lang('lang.login')</button>
                 </div>
                 </form>
             </div>
@@ -58,11 +59,11 @@
 
                     @if (auth()->check())
                         @if (auth()->user()->isAdmin())
-                            <li class="nav-item"><a class="nav-link" href="/create">Ajout étudiant</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/etudiants">Liste édutiants</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/create">@lang('lang.add_user')</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/etudiants">@lang('lang.user_list')</a></li>
                         @endif
                         <li class="nav-item"><a class="nav-link" aria-current="page"
-                                href="{{ route('forum.index') }}">Coin Social</a>
+                                href="{{ route('forum.index') }}">@lang('lang.social_corner')</a>
                         </li>
                         <div class="dropdown">
                             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenu2"
@@ -71,15 +72,15 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
-                                    class="dropdown-item" type="button">Modifier mes informations</a>
+                                    class="dropdown-item" type="button">@lang('lang.modify_user')</a>
                                 <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
-                                    type="button">Déconnexion</a>
+                                    type="button">@lang('lang.logout')</a>
                             </div>
                         </div>
                     @else
                         <li class="nav-item">
                             <a class="nav-link" type="button" data-toggle="modal" data-target="#exampleModal"
-                                data-whatever="@connexion">Connexion</a>
+                                data-whatever="@connexion">@lang('lang.login')</a>
                         </li>
                     @endif
                 </ul>
@@ -93,25 +94,22 @@
         <div class="container p-4">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="mb-3 text-white">Citation du jour</h5>
+                    <h5 class="mb-3 text-white">@lang('lang.quote_title')</h5>
                     <p>
-                        "La communication est le ciment qui maintient les relations unies et florissantes. Elle est
-                        comme une pluie fine qui arrose les âmes et les esprits, nourrissant les racines de l'empathie
-                        et de la compréhension. Sans une communication claire et ouverte, les ponts entre les personnes
-                        peuvent s'effondrer, laissant place à la méfiance, aux malentendus et à la solitude."
+                        "@lang('lang.quote')"
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3 text-white">Liens</h5>
+                    <h5 class="mb-3 text-white">@lang('lang.links')</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Réglements</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.rules')</a>
                         </li>
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Les enseignants</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.link_teachers')</a>
                         </li>
                         <li class="mb-1">
-                            <a href="#!" style="color: whitesmoke;">Les étudiants</a>
+                            <a href="#!" style="color: whitesmoke;">@lang('lang.link_students')</a>
                         </li>
                     </ul>
                 </div>
@@ -120,11 +118,11 @@
                     <table class="table" style="border-color: #ffffff;">
                         <tbody>
                             <tr>
-                                <td>Lun - Ven:</td>
+                                <td>@lang('lang.mon-fri')</td>
                                 <td>7am - 10:30pm</td>
                             </tr>
                             <tr>
-                                <td>Sam - Dim:</td>
+                                <td>@lang('lang.sat-sun')</td>
                                 <td>7am - 6pm</td>
                             </tr>
                         </tbody>
@@ -142,19 +140,18 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="dropdown-item @if ($locale == 'en') lang-select @endif"
+                                <a class="dropdown-item @if ($locale == 'en') bg-warning @endif"
                                     href="/lang/en"><img src="{{ asset('/img/flag/united-kingdom.png') }}">
                                     English</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item @if ($locale == 'fr') lang-select @endif"
+                                <a class="dropdown-item @if ($locale == 'fr') bg-warning @endif"
                                     href="/lang/fr"><img src="{{ asset('/img/flag/france.png') }}"> Français</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </div>
         <div class="text-center p-3 secondary-color">
             © 2023 Copyright:

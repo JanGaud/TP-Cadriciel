@@ -3,20 +3,23 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LocalizationMiddleware
+class Localization
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
+     * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        $locale = session()->get('locale', config('app.locale'));
-        app()->setLocale($locale);
+        if (session()->has('locale')) {
+            App::setLocale(session()->get('locale'));
+        }
         return $next($request);
     }
 }
