@@ -48,7 +48,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        $categories = Category::all();
+        return view('forum.edit', ['post' => $post, 'categories' => $categories]);
     }
 
     public function update(Request $request, Post $post)
@@ -62,12 +63,14 @@ class PostController extends Controller
         $post->content = $validatedData['content'];
         $post->save();
 
-        return redirect()->route('posts.show', ['post' => $post])->with('success', 'Post updated successfully!');
+        return redirect()->route('forum.show', ['post' => $post->id])->with('success', 'Post updated successfully!');
     }
 
-    public function destroy(Post $post)
+    public function destroy($post)
     {
+        $post = Post::find($post);
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully!');
+
+        return redirect()->route('forum.index')->with('success', 'Post deleted successfully.');
     }
 }

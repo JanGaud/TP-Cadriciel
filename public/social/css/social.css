@@ -186,3 +186,107 @@ i:hover {
         transform: translateY(0);
     }
 }
+
+/*============== card show=================*/
+
+.show-img {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.show-img img {
+    width: 100%;
+    height: auto;
+}
+
+.show-card {
+    width: clamp(300px, 60vw, 70vw);
+}
+
+.show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.act-btn-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.article-btn i {
+    color: rgb(108, 108, 108);
+}
+
+/*============== section commentaires=================*/
+
+.bdge {
+    height: 21px;
+    background-color: orange;
+    color: #fff;
+    font-size: 11px;
+    padding: 8px;
+    border-radius: 4px;
+    line-height: 3px;
+}
+
+.comments {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.hit-voting:hover {
+    color: blue;
+}
+
+.hit-voting {
+    cursor: pointer;
+}
+
+/*============== Modification article=================*/
+
+.card-modif-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-btn {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon-btn i:hover {
+    background: -moz-linear-gradient(top, #e31212 0%, #c67942 100%);
+    background: -webkit-linear-gradient(top, #e31212 0%, #c67942 100%);
+    background: linear-gradient(to bottom, #e31212 0%, #c67942 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 0.7s;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}

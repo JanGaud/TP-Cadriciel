@@ -37,8 +37,22 @@
                                     <div class="card-body">
                                         <div class="small text-muted">{{ $post->created_at->format('F j, Y') }}</div>
                                         <h2 class="card-title h4">{{ $post->title }}</h2>
-                                        <p class="card-text">{{ $post->content }}</p>
-                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                        <p class="card-text line-clamp-3">
+                                            {{ Str::limit($post->content, $limit = 200, $end = '...') }}</p>
+                                        <div class="act-btn-article mt-4">
+                                            <a class="btn btn-primary" href="{{ route('forum.show', $post->id) }}">En savoir
+                                                plus
+                                                →</a>
+                                            <div class="article-btn">
+                                                <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                                                <a href="#"><i class="fa-solid fa-comment"></i></a>
+                                                <a href="#"><i class="fa-solid fa-share"></i></a>
+                                                @if (auth()->check() && $post->user_id == auth()->user()->id)
+                                                    <a href="{{ route('forum.edit', ['post' => $post->id]) }}"><i
+                                                            class="fa-solid fa-file-pen"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -52,7 +66,7 @@
                 <div class="col-lg-4">
                     <!-- Search widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Search</div>
+                        <div class="card-header">Recherche</div>
                         <div class="card-body">
                             <div class="input-group">
                                 <input class="form-control" type="text" placeholder="Enter search term..."

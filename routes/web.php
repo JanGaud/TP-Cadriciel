@@ -36,6 +36,9 @@ Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('forum/create', [PostController::class, 'create'])->name('forum.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/forum/{post}', [PostController::class, 'show'])->name('forum.show');
+Route::get('/post-edit/{post}', [PostController::class, 'edit'])->name('forum.edit');
+Route::delete('/forum/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy');
+
 
 
 // Admin-only routes

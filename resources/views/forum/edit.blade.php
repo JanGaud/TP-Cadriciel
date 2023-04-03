@@ -1,12 +1,12 @@
 @extends('layouts.forum')
-@section('title', 'Forum')
+@section('title', 'Edit')
 @section('content')
 
     <div class="container">
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-7">
-                    Publier un article
+                    Modifier votre article
                 </h1>
             </div>
         </div>
@@ -14,6 +14,11 @@
     <hr>
 
     <div class="container mb-5">
+        <form class="article-delete" action="{{ route('post.destroy', ['post' => $post->id]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="icon-btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+        </form>
         <form action="{{ route('posts.store') }}" method="post">
             @csrf
             @if ($errors->any())
@@ -27,8 +32,7 @@
             @endif
             <div class="form-group">
                 <label for="title"></label>
-                <input value="{{ old('title') }}" type="text" class="form-control" name="title" id="title"
-                    placeholder="Titre">
+                <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}">
 
             </div>
             <div class="form-group">
@@ -41,9 +45,13 @@
             </div>
             <div class="content">
                 <label for="content"></label>
-                <textarea value="{{ old('content') }}" class="form-control" name="content" id="content" rows="3"></textarea>
+                <textarea value="{{ $post->content }}" class="form-control" name="content" id="content" rows="3">{{ $post->content }}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mt-4">Publier</button>
+            <div class="card-modif-btn">
+                <button type="submit" class="btn btn-primary btn-block mt-4">Publier</button>
+
+            </div>
+
         </form>
     </div>
 

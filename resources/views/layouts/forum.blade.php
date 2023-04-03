@@ -57,11 +57,6 @@
                                     type="button">Déconnexion</a>
                             </div>
                         </div>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" type="button" data-toggle="modal" data-target="#exampleModal"
-                                data-whatever="@connexion">Connexion</a>
-                        </li>
                     @endif
                 </ul>
 
