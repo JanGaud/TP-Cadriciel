@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ForumController;
@@ -14,6 +15,9 @@ use App\Http\Controllers\PostController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Localization routes
+Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 
 // Home page
 Route::get('/', function () {

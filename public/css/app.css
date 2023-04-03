@@ -280,3 +280,12 @@ td {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+/*================= Language Select =====================*/
+.lang-item {
+    margin-left: 20px;
+}
+
+.lang-select {
+    border-bottom: 2px solid red;
+}

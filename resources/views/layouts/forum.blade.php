@@ -59,7 +59,6 @@
                         </div>
                     @endif
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -110,6 +109,28 @@
                 </div>
             </div>
         </div>
+        @php $locale = session()->get('locale'); @endphp
+        <nav class="navbar navbar-light navbar-expand-lg mb-5">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bstarget="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="dropdown-item @if ($locale == 'en') lang-select @endif"
+                                href="/lang/en"><img src="{{ asset('/img/flag/united-kingdom.png') }}"> English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item @if ($locale == 'fr') lang-select @endif"
+                                href="/lang/fr"><img src="{{ asset('/img/flag/france.png') }}"> Français</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="text-center p-3 secondary-color">
             © 2023 Copyright:
             <a class="text-white" href="https://www.cmaisonneuve.qc.ca/">Collège de Maisonneuve</a>

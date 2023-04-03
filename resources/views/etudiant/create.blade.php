@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-7">
-                    Ajout d'étudiant
+                    @lang('lang.register_user')
                 </h1>
             </div>
             <!--/col-12-->

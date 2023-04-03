@@ -301,3 +301,12 @@ i:hover {
     animation: bounce 0.7s;
     animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
+
+/*================= Language Select =====================*/
+.lang-item {
+    margin-left: 20px;
+}
+
+.lang-select {
+    border-bottom: 2px solid red;
+}
