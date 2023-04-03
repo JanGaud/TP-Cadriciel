@@ -57,10 +57,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
+            'categories' => 'required',
         ]);
 
         $post->title = $validatedData['title'];
         $post->content = $validatedData['content'];
+        $post->category_id = $validatedData['categories'][0]; // get the first selected category
+
         $post->save();
 
         return redirect()->route('forum.show', ['post' => $post->id])->with('success', 'Post updated successfully!');

@@ -38,6 +38,11 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/forum/{post}', [PostController::class, 'show'])->name('forum.show');
 Route::get('/post-edit/{post}', [PostController::class, 'edit'])->name('forum.edit');
 Route::delete('/forum/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy');
+// Route::get('/forum/profile', [ForumController::class, 'profile'])->name('forum.profile');
+
+
+
+
 
 
 

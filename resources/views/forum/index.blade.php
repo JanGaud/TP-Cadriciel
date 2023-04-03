@@ -35,7 +35,10 @@
                                             alt="..." />
                                     </div>
                                     <div class="card-body">
-                                        <div class="small text-muted">{{ $post->created_at->format('F j, Y') }}</div>
+                                        <div class="post-card-info">
+                                            <div class="small text-muted">{{ $post->user->name }}</div>
+                                            <div class="small text-muted">{{ $post->created_at->format('F j, Y') }}</div>
+                                        </div>
                                         <h2 class="card-title h4">{{ $post->title }}</h2>
                                         <p class="card-text line-clamp-3">
                                             {{ Str::limit($post->content, $limit = 200, $end = '...') }}</p>

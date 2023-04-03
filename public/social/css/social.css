@@ -12,7 +12,7 @@
     background-color: #003e7e;
 }
 
-/*==============Post header=================*/
+/*==============Post cards=================*/
 
 .post-header {
     width: 100%;
@@ -23,6 +23,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.post-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 /*==============Footer modif=================*/
@@ -277,6 +284,10 @@ i:hover {
     background: none;
     padding: 0;
     cursor: pointer;
+}
+
+.icon-btn i {
+    color: rgb(125, 125, 125)y;
 }
 
 .icon-btn i:hover {
