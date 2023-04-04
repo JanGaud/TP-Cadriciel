@@ -7,6 +7,7 @@ use App\Models\Etudiant;
 use App\Models\User;
 use App\Models\Ville;
 
+
 class EtudiantController extends Controller
 {
 

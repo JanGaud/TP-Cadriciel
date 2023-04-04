@@ -20,7 +20,10 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg primary-color">
         <div class="container px-1">
-            <a class="navbar-brand" href="/"><img src="/img/logoCollege.png" alt=""></a>
+            <a class="navbar-brand" href="/"><object style="pointer-events: none;" data="/img/logoCollege.svg"
+                    width="auto" height="80">
+                </object>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
