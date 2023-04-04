@@ -134,7 +134,7 @@
 
         <div class="text-center p-3 secondary-color">
             © 2023 Copyright:
-            <a class="text-white" href="https://www.cmaisonneuve.qc.ca/">Collège de Maisonneuve</a>
+            <a class="text-white" href="https://www.cmaisonneuve.qc.ca/">@lang('lang.copyright')</a>
         </div>
         <!-- Copyright -->
     </footer>

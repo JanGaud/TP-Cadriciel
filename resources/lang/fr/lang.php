@@ -22,6 +22,7 @@ return [
     "opening_hours" => "Heures d'ouverture",
     "mon-fri" => "Lun - Ven:",
     "sat-sun" => "Sam - Dim:",
+    "copyright" => "Collège de Maisonneuve",
 
     // Ceci est la traduction pour la Home page
     "school_name" => "Collège de Maisonneuve",

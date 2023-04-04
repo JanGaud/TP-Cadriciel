@@ -22,7 +22,7 @@ return [
     "opening_hours" => "Opening hours",
     "mon-fri" => "Mon - Fri:",
     "sat-sun" => "Sat - Sun:",
-
+    "copyright" => "Maisonneuve College",
     // Ceci est la traduction pour la Home page
     "school_name" => "Maisonneuve College",
     "plateform_desc1" => "Welcome to the social platform of Maisonneuve College! We are delighted to present an online space where students and teachers can interact, exchange information and stay informed about the latest news from our school.",

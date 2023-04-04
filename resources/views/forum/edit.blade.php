@@ -19,8 +19,9 @@
             @method('DELETE')
             <button type="submit" class="icon-btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
         </form>
-        <form action="{{ route('posts.store') }}" method="post">
+        <form action="{{ route('posts.update', ['post' => $post->id]) }}" method="post">
             @csrf
+            @method('PUT')
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
