@@ -27,45 +27,40 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Etudiant related routes
-Route::get('create', [EtudiantController::class, 'create'])
-    ->middleware(['auth', 'auth.admin']);
-Route::get('etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
-Route::get('etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
-Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etudiant.store');
-Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
-Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
-Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy');
+// Accessible to all
 Route::redirect('/login', '/')->name('login');
 Route::post('/login', [EtudiantController::class, 'login']);
 Route::get('/logout', [EtudiantController::class, 'logout'])->name('etudiant.logout');
 
-// Forum related routes
-Route::get('forum', [ForumController::class, 'index'])
-    ->name('forum.index')
+// Admin-only routes
+Route::get('create', [EtudiantController::class, 'create'])
+    ->middleware(['auth', 'auth.admin']);
+Route::get('etudiants', [EtudiantController::class, 'index'])->name('etudiant.index')
+    ->middleware(['auth', 'auth.admin']);
+Route::get('etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit')
+    ->middleware(['auth', 'auth.admin']);
+Route::post('etudiant-create', [EtudiantController::class, 'store'])->name('etudiant.store')
+    ->middleware(['auth', 'auth.admin']);
+Route::get('etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit')
+    ->middleware(['auth', 'auth.admin']);
+Route::put('etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update')
+    ->middleware(['auth', 'auth.admin']);
+Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.destroy')
+    ->middleware(['auth', 'auth.admin']);
+
+
+// Authenticated routes
+Route::get('forum', [ForumController::class, 'index'])->name('forum.index')
     ->middleware('auth');
 Route::get('forum/create', [PostController::class, 'create'])->name('forum.create')
     ->middleware('auth');
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::get('/forum/{post}', [PostController::class, 'show'])->name('forum.show');
-Route::get('/post-edit/{post}', [PostController::class, 'edit'])->name('forum.edit');
-Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-Route::delete('/forum/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy');
-
-
-// Route::get('/forum/profile', [ForumController::class, 'profile'])->name('forum.profile');
-
-
-
-
-
-
-
-// Admin-only routes
-Route::middleware(['auth', 'admin'])->group(function () {
-    // Admin-only routes here
-});
-
-Route::middleware(['auth'])->group(function () {
-    // Authenticated routes here
-});
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store')
+    ->middleware('auth');
+Route::get('/forum/{post}', [PostController::class, 'show'])->name('forum.show')
+    ->middleware('auth');
+Route::get('/post-edit/{post}', [PostController::class, 'edit'])->name('forum.edit')
+    ->middleware('auth');
+Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update')
+    ->middleware('auth');
+Route::delete('/forum/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy')
+    ->middleware('auth');
