@@ -8,7 +8,7 @@
                 <h1 class="display-7">
                     {{ $etudiant->user->name }}
                 </h1>
-                <p>Mise à jours des informations</p>
+                <p>@lang('lang.modify_user')</p>
             </div>
             <!--/col-12-->
         </div>
@@ -23,7 +23,7 @@
                     <div class="form-outline">
                         <input value="{{ $etudiant->user->name }}" placeholder="{{ $etudiant->user->name }}" type="text"
                             id="name" name="name" class="form-control" />
-                        <label class="form-label" for="nom">Nom complet</label>
+                        <label class="form-label" for="nom">@lang('lang.name')</label>
                     </div>
                 </div>
             </div>
@@ -32,21 +32,21 @@
             <div class="form-outline mb-4">
                 <input value="{{ $etudiant->user->email }}" placeholder="{{ $etudiant->user->email }}" type="email"
                     id="email" name="email" class="form-control" />
-                <label class="form-label" for="email">Adresse courriel</label>
+                <label class="form-label" for="email">@lang('lang.email')</label>
             </div>
 
             <!-- Text input -->
             <div class="form-outline mb-4">
                 <input value="{{ $etudiant->adresse ?? '' }}" placeholder="{{ $etudiant->adresse }}" type="text"
                     id="adresse" name="adresse" class="form-control" required />
-                <label class="form-label" for="adresse">Addresse</label>
+                <label class="form-label" for="adresse">@lang('lang.adress')</label>
             </div>
 
             <!-- Date input -->
             <div class="form-outline mb-4">
                 <input type="date" name="anniversary" id="anniversary" class="form-control"
                     value="{{ $etudiant->anniversary }}" placeholder="{{ $etudiant->anniversary }}" />
-                <label class="form-label" for="anniversary">Date d'anniversaire</label>
+                <label class="form-label" for="anniversary">@lang('lang.anniversary')</label>
             </div>
 
             <!-- Number input -->
@@ -63,11 +63,11 @@
             <div class="form-outline mb-4">
                 <input value="{{ $etudiant->telephone ?? '' }}" placeholder="{{ $etudiant->telephone }}" type="text"
                     name="telephone" id="telephone" class="form-control" />
-                <label class="form-label" for="telephone">Téléphone</label>
+                <label class="form-label" for="telephone">@lang('lang.phone')</label>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Confirmer</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">@lang('lang.modify')</button>
         </form>
     </div>
 @endsection

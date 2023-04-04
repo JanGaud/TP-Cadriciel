@@ -53,11 +53,12 @@
                                 {{ Auth::user()->name }}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <a href="#" class="dropdown-item" type="button">Profil</a>
+                                <a href="#" class="dropdown-item" type="button">@lang('lang.my_profile')</a>
                                 <a href="{{ route('etudiant.edit', ['etudiant' => auth()->user()->etudiant]) }}"
-                                    class="dropdown-item" type="button">Modifier mon compte</a>
+                                    class="dropdown-item" type="button">@lang('lang.modify_user')</a>
                                 <a href="{{ route('etudiant.logout') }}" class="dropdown-item"
-                                    type="button">Déconnexion</a>
+                                    type="button">@lang('lang.logout')
+                                </a>
                             </div>
                         </div>
                     @endif

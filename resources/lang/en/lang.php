@@ -8,6 +8,11 @@ return [
     "modify_user" => "Modify my informations",
     "logout" => "Logout",
     "login" => "Login",
+    "my_profile" => "My profile",
+
+    // update & delete button translation
+    "update" => "Update",
+    "delete" => "Delete",
 
     // connexion translation
     "close" => "Close",
@@ -54,4 +59,24 @@ return [
     "select_city" => "Select a city",
     "phone" => "Phone",
     "sign_up" => "Sign up",
+
+    // Ceci est la traduction pour la modification des utilisateurs
+    "modify_user" => "Modify user informations",
+    "modify" => "Modify",
+
+    // Ceci est la traduction pour l'index du forum
+    "header_quote" => "Whisper, talk, shout, scream, say what you mean!",
+    "search" => "Search",
+    "search_placeholder" => "Search for a topic",
+    "categories" => "Categories",
+
+    // Ceci est la traduction pour la page de creation de post
+    "create_post" => "Post a new article",
+    "title" => "Title",
+    "publish" => "Publish",
+
+    // Ceci est la traduction pour la page de visonnement des posts
+    "add_comment" => "Add a comment",
+    "comment" => "Comment",
+    "reply" => "Reply",
 ];

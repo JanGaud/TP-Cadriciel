@@ -10,8 +10,8 @@
                         <table class="table table-hover">
                             <thead class="primary-color">
                                 <tr>
-                                    <th>Nom</th>
-                                    <th>Email</th>
+                                    <th>@lang('lang.name')</th>
+                                    <th>@lang('lang.email')</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -32,13 +32,14 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-outline-primary"
-                                                href="{{ route('etudiant.edit', $etudiant->id) }}">Modifier</a>
+                                                href="{{ route('etudiant.edit', $etudiant->id) }}">@lang('lang.update')</a>
                                         </td>
                                         <td>
                                             <form action="{{ route('etudiant.destroy', $etudiant->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <input type="submit" class="btn btn-outline-danger" value="Effacer">
+                                                <input type="submit" class="btn btn-outline-danger"
+                                                    value="@lang('lang.delete')">
                                             </form>
                                         </td>
                                     </tr>

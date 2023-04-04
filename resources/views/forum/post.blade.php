@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-7">
-                    Publier un article
+                    @lang('lang.create_post')
                 </h1>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="title"></label>
                 <input value="{{ old('title') }}" type="text" class="form-control" name="title" id="title"
-                    placeholder="Titre">
+                    placeholder=" @lang('lang.title')">
 
             </div>
             <div class="form-group">
@@ -43,7 +43,7 @@
                 <label for="content"></label>
                 <textarea value="{{ old('content') }}" class="form-control" name="content" id="content" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mt-4">Publier</button>
+            <button type="submit" class="btn btn-primary btn-block mt-4"> @lang('lang.publish')</button>
         </form>
     </div>
 

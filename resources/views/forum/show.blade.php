@@ -21,8 +21,8 @@
         <div class="d-flex flex-column col-md-8">
             <div class="coment-bottom bg-white p-2 px-4">
                 <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                    <input type="text" class="form-control mr-3" placeholder="Add comment"><button
-                        class="btn btn-primary" type="button">Comment</button>
+                    <input type="text" class="form-control mr-3" placeholder="@lang('lang.add_comment')"><button
+                        class="btn btn-primary" type="button">@lang('lang.comment')</button>
                 </div>
                 <div class="commented-section mt-2">
                     <div class="d-flex flex-row align-items-center commented-user">
@@ -37,7 +37,7 @@
                                 class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                 class="fa fa-sort-down fa-2x mb-3 hit-voting"></i><span class="ml-2">10</span><span
                                 class="dot ml-2"></span>
-                            <h6 class="ml-2 mt-1">Reply</h6>
+                            <h6 class="ml-2 mt-1">@lang('lang.reply')</h6>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                                 class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                 class="fa fa-sort-down fa-2x mb-3 hit-voting"></i><span class="ml-2">15</span><span
                                 class="dot ml-2"></span>
-                            <h6 class="ml-2 mt-1">Reply</h6>
+                            <h6 class="ml-2 mt-1">@lang('lang.reply')</h6>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                 class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i
                                 class="fa fa-sort-down fa-2x mb-3 hit-voting"></i><span class="ml-2">25</span><span
                                 class="dot ml-2"></span>
-                            <h6 class="ml-2 mt-1">Reply</h6>
+                            <h6 class="ml-2 mt-1">@lang('lang.reply')</h6>
                         </div>
                     </div>
                 </div>

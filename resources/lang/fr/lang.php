@@ -8,6 +8,11 @@ return [
     "modify_user" => "Modifier mes informations",
     "logout" => "Déconnexion",
     "login" => "Connexion",
+    "my_profile" => "Mon profil",
+
+    // update & delete button translation
+    "update" => "Modifier",
+    "delete" => "Effacer",
 
     // connexion translation
     "close" => "Fermer",
@@ -55,4 +60,24 @@ return [
     "select_city" => "Sélectionner une ville",
     "phone" => "Téléphone",
     "sign_up" => "Enregistrer",
+
+    // Ceci est la traduction pour la modification des utilisateurs
+    "modify_user" => "Mise à jours des informations",
+    "modify" => "Modifier",
+
+    // Ceci est la traduction pour l'index du forum
+    "header_quote" => "Chuchotez, parlez, criez, exprimez-vous!",
+    "search" => "Recherche",
+    "search_placeholder" => "Rechercher un sujet",
+    "categories" => "Catégories",
+
+    // Ceci est la traduction pour la page de creation de post
+    "create_post" => "Publier un article",
+    "title" => "Titre",
+    "publish" => "Publier",
+
+    // Ceci est la traduction pour la page de visonnement des posts
+    "add_comment" => "Ajouter un commentaire",
+    "comment" => "Commenter",
+    "reply" => "Répondre",
 ];
