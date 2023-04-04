@@ -142,13 +142,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="dropdown-item @if ($locale == 'en') bg-warning @endif"
+                            <li class="nav-item lang-item">
+                                <a class="dropdown-item @if ($locale == 'en') lang-link @endif"
                                     href="/lang/en"><img src="{{ asset('/img/flag/united-kingdom.png') }}">
                                     English</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item @if ($locale == 'fr') bg-warning @endif"
+                            <li class="nav-item lang-item">
+                                <a class="dropdown-item @if ($locale == 'fr') lang-link @endif"
                                     href="/lang/fr"><img src="{{ asset('/img/flag/france.png') }}"> Français</a>
                             </li>
                         </ul>
